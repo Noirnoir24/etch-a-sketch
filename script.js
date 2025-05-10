@@ -1,3 +1,9 @@
+function randomizeColor() {
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    randomColor= "#"+randomColor;
+    return randomColor
+}
+
 const canvas= document.querySelector("#container");
 
 for(i=0; i<256; i++) {
@@ -10,7 +16,7 @@ let oldSquares= document.querySelectorAll(".square")
 
 for (let square of oldSquares) {     
     square.addEventListener("mouseover", () => {         
-        square.style.backgroundColor = "red";      
+        square.style.backgroundColor = randomizeColor();      
     }); 
 }
 
@@ -46,7 +52,7 @@ button.addEventListener("click", () => {
 
     for (let square of newSquares) {     
         square.addEventListener("mouseover", () => {         
-            square.style.backgroundColor = "red";      
+            square.style.backgroundColor = randomizeColor();       
         }); 
     }
 
